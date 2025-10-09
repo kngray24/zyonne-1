@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zyonne Senior Oasis | Faith-Based Assisted Living</title>
+  <meta name="description" content="Faith-based assisted living where compassion meets care. Zyonne Senior Oasis provides a safe, nurturing environment for seniors.">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    /* Styling for the new 'What We Do' section (Kept internal due to specific layout needs) */
+    .what-we-do {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin: 60px auto;
+      max-width: 1100px;
+      padding: 0 20px;
+    }
+    .what-we-do-text {
+      flex: 1;
+    }
+    .what-we-do-image {
+      flex: 1;
+      text-align: center;
+    }
+    .what-we-do-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    @media (max-width: 768px) {
+      .what-we-do {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="logo">
+    <a href="index.html" aria-label="Zyonne Senior Oasis Home">
+      <img src="assets/zyonne_logo.png" alt="Zyonne Senior Oasis logo"/>
+    </a>
+  </div>
+  <div class="brand">Zyonne Senior Oasis</div>
+  <div id="menuToggle" class="menu-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="mobileNav">&#9776;</div>
+</header>
+<div class="site-menu" role="navigation" aria-label="Primary">
+  <nav class="site-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <nav id="mobileNav" class="mobile-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="site-main">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Faith-Based Compassionate Care</h1>
+      <p>Providing safety, dignity, and love in every moment.</p>
+      <a href="contact.html" class="btn">Book a Tour</a>
+    </div>
+  </section>
+
+  <section class="intro content">
+    <h2>Welcome to Zyonne Senior Oasis</h2>
+    <p>Our mission is to create a peaceful, nurturing environment where seniors thrive spiritually, emotionally, and physically. We offer personalized care plans and a supportive community where residents are treated like family.</p>
+  </section>
+
+  <section class="what-we-do fade-in">
+    <div class="what-we-do-text">
+      <h2>What We Do</h2>
+      <p>We are a faith-based Residential Assisted Living (RAL) oasis that provides a safe and comfortable home for seniors who need assistance with activities of daily living. We are unique in that we are not an institutionalized facility, but a community of caring professionals dedicated to helping our residents live their best lives.</p>
+      <ul>
+        <li><span class="text-bold">Personal care assistance</span> (bathing, dressing, mobility)</li>
+        <li><span class="text-bold">Chef-prepared dining services</span></li>
+        <li><span class="text-bold">Housekeeping & laundry services</span></li>
+        <li><span class="text-bold">Medication management</span></li>
+        <li><span class="text-bold">Activities & social programs</span></li>
+      </ul>
+      <a href="services.html" class="btn">View All Services</a>
+    </div>
+    <div class="what-we-do-image">
+      <img src="assets/whatwedo.png" alt="A caregiver smiling while reading a book with a senior resident."/>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Zyonne Senior Oasis. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>

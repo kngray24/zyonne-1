@@ -1,0 +1,296 @@
+<!DOCTYPE html><html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" /><title>Zyonne Residence | Zyonne Senior Oasis</title><link rel='stylesheet' href='styles.css'>  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Specific styles for this page (Gallery and Features blocks) */
+    .residence-gallery {
+      display: flex;
+      justify-content: center; /* Center the entire row of images */
+      gap: 20px; /* Space between images */
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .residence-gallery img {
+      width: 30%; /* Gives even spacing and centers nicely */
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      cursor: pointer; /* Indicate clickable image */
+      transition: transform 0.2s ease;
+    }
+    .residence-gallery img:hover {
+      transform: scale(1.02);
+    }
+    /* Style for centering the map */
+    .map-container {
+      max-width: 800px; /* Set a max width for the map container */
+      margin: 30px auto; /* Centers the div horizontally and adds margin */
+      padding: 0 20px;
+    }
+    #map {
+        height: 400px; 
+        width: 100%; 
+        border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+      .residence-gallery {
+        flex-direction: column; /* Stack images vertically on small screens */
+        align-items: center;
+      }
+      .residence-gallery img {
+        width: 100%;
+        max-width: 400px; /* Max size for stacked images */
+        margin-bottom: 20px;
+      }
+    }
+
+    /* === RESIDENCE FEATURES STYLING === */
+    .features-block {
+        max-width: 1000px;
+        margin: 60px auto 40px;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .features-block h2 {
+        color: var(--color-text-dark);
+        font-size: 2.2em; 
+        margin-bottom: 5px;
+        border-bottom: none; 
+    }
+    .features-block .subtitle {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+        font-weight: 500;
+        color: #555;
+    }
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin-top: 40px;
+    }
+    .features-list li {
+        display: flex;
+        align-items: center;
+        width: 40%; 
+        min-width: 300px; 
+        margin: 10px 20px;
+        font-weight: 600;
+        text-align: left;
+    }
+    .features-list .checkbox-icon {
+        background-color: var(--color-primary);
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+        .features-list li {
+            width: 90%;
+            margin: 10px 0;
+        }
+    }
+  </style>
+</head><body><header class="site-header">
+  <div class="logo">
+    <a href="index.html" aria-label="Zyonne Senior Oasis Home">
+      <img src="assets/zyonne_logo.png" alt="Zyonne Senior Oasis logo"/>
+    </a>
+  </div>
+  <div class="brand">Zyonne Senior Oasis</div>
+  <div id="menuToggle" class="menu-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="mobileNav">&#9776;</div>
+</header>
+<div class="site-menu" role="navigation" aria-label="Primary">
+  <nav class="site-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <nav id="mobileNav" class="mobile-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+<main class="site-main">
+  <section class="page-hero">
+    <h1>Zyonne Residence</h1>
+  </section>
+
+  <div class="features-block fade-in">
+    <h2>We introduce the "Zyonne Residence"</h2>
+    <p class="subtitle">Residential Assisted Living Board and Care home located in Frankfort Square in Will County, Illinois.</p>
+    
+    <p style="font-size: 1.2em; font-weight: 700;">Over 1,500 square feet of living space in a quiet and senior friendly low traffic neighborhood.</p>
+
+    <ul class="features-list">
+        <li><div class="checkbox-icon">✓</div> A 4 beds ranch home.</li>
+        <li><div class="checkbox-icon">✓</div> A patio and fenced yard</li>
+        <li><div class="checkbox-icon">✓</div> A functional sun room</li>
+        <li><div class="checkbox-icon">✓</div> A family room and living room area</li>
+        <li><div class="checkbox-icon">✓</div> Close proximity to park, shops, library, worship center, dinning and transport.</li>
+        <li><div class="checkbox-icon">✓</div> Ample open space behind the home for gardening or recreation.</li>
+    </ul>
+  </div>
+  <section class="content">
+    <p>Located in Frankfort Square, IL, the Zyonne Residence provides a safe and loving home environment for seniors. Our faith-based approach ensures compassionate and dignified assisted living services.</p>
+  </section>
+  
+  <div class="residence-gallery">
+    <img src="assets/zyonne1.jpeg" alt="Exterior view of Zyonne Residence showing a deck and landscaping." data-index="0" tabindex="0"/>
+    <img src="assets/zyonne2.jpeg" alt="Front view of Zyonne Residence showing a welcoming entrance and driveway." data-index="1" tabindex="0"/>
+    <img src="assets/zyonne3.jpeg" alt="Patio area of Zyonne Residence with outdoor seating and umbrella." data-index="2" tabindex="0"/>
+  </div>
+
+  <div class="map-container">
+    <p style="text-align: center; font-weight: 700; margin-bottom: 10px;">Find your way to the Zyonne Residence</p>
+    
+    <div id="map"></div>
+
+    <p style="text-align: center; margin-top: 5px; font-size: 0.9em;">Use the map above to explore the area and get directions.</p>
+  </div>
+  </main>
+<footer>
+  <p>© <span id='year'>2025</span> Zyonne Senior Oasis. All Rights Reserved.</p>
+</footer>
+
+<div id="imageModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img id="enlargedImg" src="" alt="Enlarged Residence Image">
+  </div>
+  <a class="prev-arrow" onclick="changeSlide(-1)" tabindex="0" role="button" aria-label="Previous image">&#10094;</a>
+  <a class="next-arrow" onclick="changeSlide(1)" tabindex="0" role="button" aria-label="Next image">&#10095;</a>
+</div>
+
+<script src='script.js'></script>
+
+<script>
+  // === GALLERY/LIGHTBOX SCRIPT (Updated for accessibility) ===
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('enlargedImg');
+  const galleryImages = document.querySelectorAll('.residence-gallery img');
+  let currentIndex = 0;
+  const imageSources = Array.from(galleryImages).map(img => img.src);
+
+  const openModalWithImage = (index) => {
+    currentIndex = index;
+    modalImg.src = imageSources[currentIndex];
+    modal.style.display = "block";
+  };
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openModalWithImage(index));
+    
+    // Allow Enter key to open modal (Accessibility)
+    img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            openModalWithImage(index);
+        }
+    });
+  });
+
+  function changeSlide(n) {
+    let nextIndex = currentIndex + n;
+    if (nextIndex >= imageSources.length) {
+      nextIndex = 0; 
+    } else if (nextIndex < 0) {
+      nextIndex = imageSources.length - 1;
+    }
+    currentIndex = nextIndex;
+    modalImg.src = imageSources[currentIndex];
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+
+  document.onkeydown = function(e) {
+    e = e || window.event;
+    if (modal.style.display === "block") {
+        if (e.key === "Escape" || e.key === "Esc") {
+            closeModal();
+        } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            changeSlide(-1);
+        } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            changeSlide(1);
+        }
+    }
+  };
+  
+  // === GOOGLE MAPS SCRIPT ===
+  function initMap() {
+    const zyonneLocation = { lat: 41.5255076, lng: -87.8002515 }; 
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: zyonneLocation,
+    });
+
+    new google.maps.Marker({
+      position: zyonneLocation,
+      map,
+      title: "Zyonne Residence",
+    });
+  }
+
+  window.initMap = initMap;
+</script>
+
+<script async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7y7hnyUrEQUrFXIowErVVE4rQXE6X6F4&callback=initMap">
+</script>
+
+<script>
+  // Faders script
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+</body></html>

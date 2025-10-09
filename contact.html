@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Zyonne Senior Oasis</title>
+  <meta name="description" content="Get in touch with Zyonne Senior Oasis to schedule a tour or ask questions about our services.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="logo">
+    <a href="index.html" aria-label="Zyonne Senior Oasis Home">
+      <img src="assets/zyonne_logo.png" alt="Zyonne Senior Oasis logo"/>
+    </a>
+  </div>
+  <div class="brand">Zyonne Senior Oasis</div>
+  <div id="menuToggle" class="menu-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="mobileNav">&#9776;</div>
+</header>
+<div class="site-menu" role="navigation" aria-label="Primary">
+  <nav class="site-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <nav id="mobileNav" class="mobile-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="site-main">
+  <section class="page-hero">
+    <h1>Contact Us</h1>
+  </section>
+
+  <section class="content contact">
+    <p>We’d love to hear from you! Reach out to us using the form below or call us directly.</p>
+
+    <div class="contact-details">
+      <h2>Contact Details</h2>
+      <p><span class="text-bold">Phone:</span> +1 (708) 465-5438</p> 
+      <p><span class="text-bold">Email:</span> gracelandbyzyonne@gmail.com</p> 
+      <p><span class="text-bold">Location:</span> 20029 Graceland Lane, Frankfort, IL 60423</p>
+      
+      <h2>Office Hours</h2>
+      <ul>
+        <li><span class="text-bold">Monday - Thursday:</span> 8:00 AM - 8:00 PM</li>
+        <li><span class="text-bold">Friday:</span> 9:00 AM - 7:00 PM</li>
+        <li><span class="text-bold">Saturday - Sunday:</span> Closed</li>
+      </ul>
+    </div>
+
+    <form action="#" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Zyonne Senior Oasis. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+<script src="script.js" defer></script>
+</body>
+</html>

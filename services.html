@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Zyonne Senior Oasis</title>
+  <meta name="description" content="Explore the range of assisted living and personal care services offered by Zyonne Senior Oasis.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="logo">
+    <a href="index.html" aria-label="Zyonne Senior Oasis Home">
+      <img src="assets/zyonne_logo.png" alt="Zyonne Senior Oasis logo"/>
+    </a>
+  </div>
+  <div class="brand">Zyonne Senior Oasis</div>
+  <div id="menuToggle" class="menu-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="mobileNav">&#9776;</div>
+</header>
+<div class="site-menu" role="navigation" aria-label="Primary">
+  <nav class="site-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <nav id="mobileNav" class="mobile-nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="zyonne_residence.html">Zyonne Residence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="site-main">
+  <section class="page-hero">
+    <h1>Our Services</h1>
+  </section>
+
+  <section class="content">
+    <div class="service fade-in">
+      <h2>Assisted Living & Personal Care</h2>
+      <p>We provide personalized support for activities of daily living (ADLs), including assistance with bathing, dressing, grooming, and mobility. Our licensed caregiving staff are on site around the clock, and individualized care plans are reviewed regularly to align services with each resident's changing needs.</p>
+      <ul>
+        <li>24/7 on-site caregiving staff</li>
+        <li>Individualized care plans</li>
+        <li>Incontinence management</li>
+        <li>Transportation arrangement</li>
+      </ul>
+    </div>
+
+    <div class="service fade-in">
+      <h2>Meal Preparation & Dining Services</h2>
+      <p>Residents enjoy chef-prepared meals served in a family-style dining setting. We focus on nutritious, home-style cooking and accommodate dietary restrictions and special needs to ensure health and enjoyment at every meal.</p>
+      <ul>
+        <li>Three healthy, daily meals and snacks</li>
+        <li>Specialized diet accommodations</li>
+        <li>Hydration monitoring</li>
+      </ul>
+    </div>
+
+    <div class="service fade-in">
+      <h2>Faith-Based Care & Activities</h2>
+      <p>Our faith-based foundation is woven into all we do, promoting spiritual well-being. We offer regular in-home worship opportunities and activities designed to enrich the mind and spirit.</p>
+      <ul>
+        <li>Daily wellness and exercise programs</li>
+        <li>Social gatherings and enrichment activities</li>
+        <li>In-home Bible studies and worship services</li>
+      </ul>
+    </div>
+
+    <div class="service fade-in">
+      <h2>Medication Management & Health Monitoring</h2>
+      <p>Safety and wellness are our top priorities. We coordinate with healthcare providers to ensure accurate administration and monitoring of all medications, offering peace of mind to residents and their families.</p>
+      <ul>
+        <li>Medication administration and management</li>
+        <li>Coordination with outside healthcare providers</li>
+        <li>Vitals monitoring and health checks</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Zyonne Senior Oasis. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
