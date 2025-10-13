@@ -64,8 +64,22 @@
 
     <div class="contact-details">
       <h2>Contact Details</h2>
-      <p><span class="text-bold">Phone:</span> +1 (708) 465-5438</p> 
-      <p><span class="text-bold">Email:</span> gracelandbyzyonne@gmail.com</p> 
+     <a href="tel:+17084655438"
+   onclick="gtag('event', 'click_call', {
+     'link_url': this.href,
+     'link_text': this.textContent
+   });">
+  Call +1 (708) 465-5438
+	</a>
+
+      <p><a href="mailto:gracelandbyzyonne@gmail.com"
+   onclick="gtag('event', 'click_email', {
+     'link_url': this.href,
+     'link_text': 'gracelandbyzyonne@gmail.com'
+   });">
+  Email: <span style="text-decoration: underline">gracelandbyzyonne@gmail.com</span>
+</a></p>
+ 
       <p><span class="text-bold">Location:</span> 20029 Graceland Lane, Frankfort, IL 60423</p>
       
       <h2>Office Hours</h2>
@@ -117,5 +131,13 @@
 </script>
 
 <script src="script.js" defer></script>
+<script>
+window.addEventListener('scroll', function() {
+  let depth = (window.scrollY + window.innerHeight) / document.body.offsetHeight * 100;
+  if (depth >= 50 && !window.depth50) { gtag('event','scroll_depth',{scroll_percent:50}); window.depth50=true; }
+  if (depth >= 90 && !window.depth90) { gtag('event','scroll_depth',{scroll_percent:90}); window.depth90=true; }
+});
+</script>
+
 </body>
 </html>
