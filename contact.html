@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{
+    'ad_storage':'denied',
+    'analytics_storage':'denied'
+  });
+</script>
+
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQGESTSNX0"></script>
 <script>
@@ -9,6 +20,14 @@
   gtag('js', new Date());
 
   gtag('config', 'G-MQGESTSNX0');
+</script>
+
+<script>
+window.addEventListener('scroll', function() {
+  let depth = (window.scrollY + window.innerHeight) / document.body.offsetHeight * 100;
+  if (depth >= 50 && !window.depth50) { gtag('event','scroll_depth',{scroll_percent:50}); window.depth50=true; }
+  if (depth >= 90 && !window.depth90) { gtag('event','scroll_depth',{scroll_percent:90}); window.depth90=true; }
+});
 </script>
 
   <meta charset="UTF-8" />
@@ -131,13 +150,6 @@
 </script>
 
 <script src="script.js" defer></script>
-<script>
-window.addEventListener('scroll', function() {
-  let depth = (window.scrollY + window.innerHeight) / document.body.offsetHeight * 100;
-  if (depth >= 50 && !window.depth50) { gtag('event','scroll_depth',{scroll_percent:50}); window.depth50=true; }
-  if (depth >= 90 && !window.depth90) { gtag('event','scroll_depth',{scroll_percent:90}); window.depth90=true; }
-});
-</script>
 
 </body>
 </html>
