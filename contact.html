@@ -81,23 +81,33 @@ window.addEventListener('scroll', function() {
   <section class="content contact">
     <p>We’d love to hear from you! Reach out to us using the form below or call us directly.</p>
 
-    <div class="contact-details">
-      <h2>Contact Details</h2>
-     <a href="tel:+17084655438"
-   onclick="gtag('event', 'click_call', {
-     'link_url': this.href,
-     'link_text': this.textContent
-   });">
-  Call +1 (708) 465-5438
-	</a>
+<a href="tel:+17084655438" id="call-link">Call +1 (708) 465-5438</a>
 
-      <p><a href="mailto:gracelandbyzyonne@gmail.com"
-   onclick="gtag('event', 'click_email', {
-     'link_url': this.href,
-     'link_text': 'gracelandbyzyonne@gmail.com'
-   });">
-  Email: <span style="text-decoration: underline">gracelandbyzyonne@gmail.com</span>
-</a></p>
+
+<script>
+  const callLink = document.getElementById('call-link');
+  callLink.addEventListener('click', function(e) {
+    // Prevent immediate navigation so the event can send
+    e.preventDefault();
+    const href = this.href;
+
+
+    let navigated = false;
+    const go = () => { if (!navigated) { navigated = true; window.location.href = href; } };
+
+
+    gtag('event', 'click_call', {
+      'link_url': href,
+      'link_text': this.textContent.trim(),
+      'event_callback': go,
+      'event_timeout': 800 // fallback (ms)
+    });
+
+
+    // Hard fallback in case callback never fires (older browsers)
+    setTimeout(go, 900);
+  });
+</script>
  
       <p><span class="text-bold">Location:</span> 20029 Graceland Lane, Frankfort, IL 60423</p>
       
