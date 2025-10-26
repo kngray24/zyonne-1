@@ -5,10 +5,9 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{
-    'ad_storage':'denied',
-    'analytics_storage':'denied'
-  });
+gtag('consent', 'update', {
+  'analytics_storage': 'granted'
+});
 </script>
 
 
@@ -34,8 +33,6 @@ window.addEventListener('scroll', function() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Zyonne Senior Oasis</title>
   <meta name="description" content="Get in touch with Zyonne Senior Oasis to schedule a tour or ask questions about our services.">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -81,33 +78,23 @@ window.addEventListener('scroll', function() {
   <section class="content contact">
     <p>We’d love to hear from you! Reach out to us using the form below or call us directly.</p>
 
-<a href="tel:+17084655438" id="call-link">Call +1 (708) 465-5438</a>
+    <div class="contact-details">
+      <h2>Contact Details</h2>
+     <a href="tel:+17084655438"
+   onclick="gtag('event', 'click_call', {
+     'link_url': this.href,
+     'link_text': this.textContent
+   });">
+  Call +1 (708) 465-5438
+	</a>
 
-
-<script>
-  const callLink = document.getElementById('call-link');
-  callLink.addEventListener('click', function(e) {
-    // Prevent immediate navigation so the event can send
-    e.preventDefault();
-    const href = this.href;
-
-
-    let navigated = false;
-    const go = () => { if (!navigated) { navigated = true; window.location.href = href; } };
-
-
-    gtag('event', 'click_call', {
-      'link_url': href,
-      'link_text': this.textContent.trim(),
-      'event_callback': go,
-      'event_timeout': 800 // fallback (ms)
-    });
-
-
-    // Hard fallback in case callback never fires (older browsers)
-    setTimeout(go, 900);
-  });
-</script>
+      <p><a href="mailto:gracelandbyzyonne@gmail.com"
+   onclick="gtag('event', 'click_email', {
+     'link_url': this.href,
+     'link_text': 'gracelandbyzyonne@gmail.com'
+   });">
+  Email: <span style="text-decoration: underline">gracelandbyzyonne@gmail.com</span>
+</a></p>
  
       <p><span class="text-bold">Location:</span> 20029 Graceland Lane, Frankfort, IL 60423</p>
       
