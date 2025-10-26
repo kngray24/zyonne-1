@@ -39,32 +39,6 @@
       }
     });
   </script>
-
-
-<script>
-  const callLink = document.getElementById('call-link');
-  callLink.addEventListener('click', function(e) {
-    // Prevent immediate navigation so the event can send
-    e.preventDefault();
-    const href = this.href;
-
-
-    let navigated = false;
-    const go = () => { if (!navigated) { navigated = true; window.location.href = href; } };
-
-
-    gtag('event', 'click_call', {
-      'link_url': href,
-      'link_text': this.textContent.trim(),
-      'event_callback': go,
-      'event_timeout': 800 // fallback (ms)
-    });
-
-
-    // Hard fallback in case callback never fires (older browsers)
-    setTimeout(go, 900);
-  });
-</script>
 </head>
 
 <body>
@@ -75,7 +49,15 @@
       </a>
     </div>
     <div class="brand">Zyonne Senior Oasis</div>
-    <div id="menuToggle" class="menu-toggle" tabindex="0" role="button" aria-expanded="false" aria-controls="mobileNav">&#9776;</div>
+    <div
+      id="menuToggle"
+      class="menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileNav"
+    >&#9776;</div>
   </header>
 
   <div class="site-menu" role="navigation" aria-label="Primary">
@@ -166,4 +148,56 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit" cl
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Zyonne Senior Oasis. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Fade-in animation script -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Optional: keyboard support for menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuToggle && mobileNav) {
+      function toggleNav() {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        mobileNav.classList.toggle('open');
+      }
+
+      menuToggle.addEventListener('click', toggleNav);
+      menuToggle.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleNav();
+        }
+      });
+    }
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
