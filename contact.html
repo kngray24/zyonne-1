@@ -39,6 +39,32 @@
       }
     });
   </script>
+
+
+<script>
+  const callLink = document.getElementById('call-link');
+  callLink.addEventListener('click', function(e) {
+    // Prevent immediate navigation so the event can send
+    e.preventDefault();
+    const href = this.href;
+
+
+    let navigated = false;
+    const go = () => { if (!navigated) { navigated = true; window.location.href = href; } };
+
+
+    gtag('event', 'click_call', {
+      'link_url': href,
+      'link_text': this.textContent.trim(),
+      'event_callback': go,
+      'event_timeout': 800 // fallback (ms)
+    });
+
+
+    // Hard fallback in case callback never fires (older browsers)
+    setTimeout(go, 900);
+  });
+</script>
 </head>
 
 <body>
